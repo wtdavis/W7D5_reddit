@@ -12,7 +12,7 @@
   <body>
   <header>
     <h1>Cleddit</h1>
-      <% if logged_in?%>
+      <% if logged_in? %>
         <form action="<%= session_url%>" method="POST">
         <input type="hidden" name="_method" method="DELETE">
         <input type="submit" value="Logout">

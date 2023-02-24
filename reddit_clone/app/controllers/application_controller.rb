@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
         redirect_to new_session_url unless logged_in?
     end
 
+    def ensure_logged_out
+        redirect_to user_url if logged_in?
+    end
+
+
     def logged_in?
         !!current_user
     end
