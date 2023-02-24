@@ -17,3 +17,375 @@ Migrating to CreateUsers (20230224153834)
   [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(688274183373989625)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-02-24 13:41:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/wtdavis/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/wtdavis/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 526)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 2804)
+
+
+Started GET "/users" for ::1 at 2023-02-24 13:41:33 -0500
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 775)
+
+
+
+SyntaxError - syntax error, unexpected ':', expecting `end'
+...es :password_digest, :presence: true
+...                              ^:
+  app/models/user.rb:3:in `'
+  app/controllers/users_controller.rb:4:in `index'
+
+Started POST "/__better_errors/222bfd8b24b1f731/variables" for ::1 at 2023-02-24 13:41:34 -0500
+Started POST "/__better_errors/222bfd8b24b1f731/variables" for ::1 at 2023-02-24 13:42:13 -0500
+Started GET "/users" for ::1 at 2023-02-24 13:42:17 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 978)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 7464)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.4ms | Allocations: 9301)
+
+
+Started GET "/users" for ::1 at 2023-02-24 13:48:11 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3837)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 6234)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.4ms | Allocations: 7956)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <header>
+    <h1>Cleddit</h1>
+    <% if logged_in?%>
+    <form action="<%= session_url%>" method="POST">
+    <input type="hidden" name="_method" method="DELETE">
+    <input type="submit" value="Logout">
+    </form>
+    <%= yield %>
+  </body>
+</html>:
+  app/controllers/users_controller.rb:5:in `index'
+
+Started POST "/__better_errors/64e9f854c2ae8abd/variables" for ::1 at 2023-02-24 13:48:11 -0500
+Started GET "/users" for ::1 at 2023-02-24 13:49:03 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 831)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2484)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 3189)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <header>
+    <h1>Cleddit</h1>
+    <% if logged_in?%>
+    <form action="<%= session_url%>" method="POST">
+    <input type="hidden" name="_method" method="DELETE">
+    <input type="submit" value="Logout">
+    </form>
+    </header>
+    <%= yield %>
+  </body>
+</html>:
+  app/controllers/users_controller.rb:5:in `index'
+
+Started POST "/__better_errors/e43779fe039eb9d0/variables" for ::1 at 2023-02-24 13:49:03 -0500
+Started GET "/users" for ::1 at 2023-02-24 13:49:03 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 628)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2288)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2547)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <header>
+    <h1>Cleddit</h1>
+    <% if logged_in?%>
+    <form action="<%= session_url%>" method="POST">
+    <input type="hidden" name="_method" method="DELETE">
+    <input type="submit" value="Logout">
+    </form>
+    </header>
+    <%= yield %>
+  </body>
+</html>:
+  app/controllers/users_controller.rb:5:in `index'
+
+Started POST "/__better_errors/7da6dde2282b1453/variables" for ::1 at 2023-02-24 13:49:03 -0500
+Started GET "/users" for ::1 at 2023-02-24 13:49:30 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 619)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2274)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 2523)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <header>
+    <h1>Cleddit</h1>
+    <% if logged_in?%>
+    <form action="<%= session_url%>" method="POST">
+    <input type="hidden" name="_method" method="DELETE">
+    <input type="submit" value="Logout">
+    </form>
+    </header>
+    <%= yield %>
+  </body>
+</html>:
+  app/controllers/users_controller.rb:5:in `index'
+
+Started POST "/__better_errors/506cff8db51a39e1/variables" for ::1 at 2023-02-24 13:49:30 -0500
+Started GET "/users" for ::1 at 2023-02-24 13:50:01 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 817)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2468)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 3160)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <header>
+    <h1>Cleddit</h1>
+    <% if logged_in?%>
+    <form action="<%= session_url%>" method="POST">
+    <input type="hidden" name="_method" method="DELETE">
+    <input type="submit" value="Logout">
+    </form>
+    </header>
+    <%= yield %>
+  </body>
+</html>:
+  app/controllers/users_controller.rb:5:in `index'
+
+Started POST "/__better_errors/41c5be697143084a/variables" for ::1 at 2023-02-24 13:50:01 -0500
+Started GET "/users" for ::1 at 2023-02-24 13:50:01 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 619)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2276)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 2526)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <header>
+    <h1>Cleddit</h1>
+    <% if logged_in?%>
+    <form action="<%= session_url%>" method="POST">
+    <input type="hidden" name="_method" method="DELETE">
+    <input type="submit" value="Logout">
+    </form>
+    </header>
+    <%= yield %>
+  </body>
+</html>:
+  app/controllers/users_controller.rb:5:in `index'
+
+Started POST "/__better_errors/044b3442758f25af/variables" for ::1 at 2023-02-24 13:50:02 -0500
+Started GET "/users" for ::1 at 2023-02-24 13:50:02 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 619)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2276)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2525)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <header>
+    <h1>Cleddit</h1>
+    <% if logged_in?%>
+    <form action="<%= session_url%>" method="POST">
+    <input type="hidden" name="_method" method="DELETE">
+    <input type="submit" value="Logout">
+    </form>
+    </header>
+    <%= yield %>
+  </body>
+</html>:
+  app/controllers/users_controller.rb:5:in `index'
+
+Started POST "/__better_errors/917da278ce0b60ae/variables" for ::1 at 2023-02-24 13:50:02 -0500
+Started GET "/users" for ::1 at 2023-02-24 13:50:03 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 628)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2290)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 2549)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <header>
+    <h1>Cleddit</h1>
+    <% if logged_in?%>
+    <form action="<%= session_url%>" method="POST">
+    <input type="hidden" name="_method" method="DELETE">
+    <input type="submit" value="Logout">
+    </form>
+    </header>
+    <%= yield %>
+  </body>
+</html>:
+  app/controllers/users_controller.rb:5:in `index'
+
+Started POST "/__better_errors/46cffd780439550b/variables" for ::1 at 2023-02-24 13:50:03 -0500
+Started GET "/users" for ::1 at 2023-02-24 13:50:34 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 817)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 5468)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 2.4ms | Allocations: 6209)
+
+
+Started GET "/users" for ::1 at 2023-02-24 13:55:11 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 817)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3268)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 3984)
+
+
+Started GET "/users" for ::1 at 2023-02-24 13:55:13 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 549)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2369)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.5ms | Allocations: 2604)
+
+
+Started GET "/users" for ::1 at 2023-02-24 13:55:13 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 549)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2372)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 2588)
+
+
